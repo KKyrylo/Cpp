@@ -4,6 +4,7 @@ using namespace std;
 
 
 int task1(){
+  // cout << "Tasks\n";
   cout<<"Task 1:\n";
 
   cout << "Your number is (up to five digits):\n";
@@ -33,7 +34,7 @@ int task2(){
   cout << "b="<<b<<endl;
   cout << "f="<<f<<endl;
   cout<< "Calculating by formula: (а + b — f / а) + f * a * a — (a + b)\n";
-  cout<<"x="<<(a + b - f / a) + f * a * a - (a + b)<<endl;
+  cout<<"x="<< ((a + b - f / a) + f * a * a - (a + b)) <<endl;
   
   return 0;
 }
@@ -43,9 +44,14 @@ int task3(){
   char z;
   cout <<"Enter latin lowercase letter:\n";
   cin>>z;
-  cout<<"Your lowercase letter is:"<<z<<endl;
-  cout<<"Your letter in uppercase then is:\n";
-  cout<<(z-32)<<endl;
+  if (z>='a' && z<='z'){
+    cout<<"Your lowercase letter is: "<<z<<endl;
+    cout<<"Your letter in uppercase then is: ";
+    cout<< (char)( z  - ( 'z'-'Z') ) <<endl;
+  }
+  else{
+    cout<<"--- ";
+  }
 
   return 0;
 }
@@ -55,7 +61,7 @@ int task4(){
   cout<<"Enter meters:"<<endl;
   int metr;
   cin>> metr;
-  cout<<metr<<"meters in kilometers will be"<<metr/1000<<"kilometers"<<endl;
+  cout<<metr<<" meters in kilometers will be "<<metr/1000<<" kilometers"<<endl;
   return 0;
 
 }
@@ -66,12 +72,12 @@ int task5(){
   // cout<<plusik<<endl;
   // cout<<plusik<<plusik<<endl;
   cout<<"+\n";
-  cout<<"++\n";
-  cout<<"+++\n";
-  cout<<"++++\n";
-  cout<<"+++++\n";
-  cout<<"++++++\n";
-  cout<<"+++++++\n";
+  // cout<<"++\n";
+  // cout<<"+++\n";
+  // cout<<"++++\n";
+  // cout<<"+++++\n";
+  // cout<<"++++++\n";
+  // cout<<"+++++++\n";
   return 0;
 }
 
@@ -86,34 +92,16 @@ int task6(){
   cout<<"Enter your third num:\n";
   cin>>numC;
 
-  if (numA=numB)
+  if ( numA==numB || numA==numC || numB==numC )
   {
     cout<<"1 number*5 ="<<numA*5<<endl;
     cout<<"2 number*5 ="<<numB*5<<endl;
     cout<<"3 number*5 ="<<numC*5<<endl;
-
-  } 
-  else
-  {
-    if (numA=numC)
-    {
-      cout<<"1 number*5 ="<<numA*5<<endl;
-      cout<<"2 number*5 ="<<numB*5<<endl;
-      cout<<"3 number*5 ="<<numC*5<<endl;
-    }
-    else 
-    {
-      if(numB=numC){
-        cout<<"1 number*5 ="<<numA*5<<endl;
-        cout<<"2 number*5 ="<<numB*5<<endl;
-        cout<<"3 number*5 ="<<numC*5<<endl;
-      }
-      else{
-        cout<<"At least two numbers must match, the input is incorrect"<<endl;
-      }
-    }
-
+  }else{
+    cout<<"At least two numbers must match, the input is incorrect"<<endl;
   }
+    
+  
   return 0;
 }
 
@@ -134,6 +122,7 @@ int task7(){
 
 int task8(){
   cout<<"Task8:\n";
+  //  n > 999  and n < 10000
   srand((unsigned int) time (0)); //activates the generator
   int num_rand = rand()%10000;
   while (num_rand<0){
@@ -143,7 +132,6 @@ int task8(){
   }
 
     return 0;
-  
 }
 
 int task9(){
@@ -151,28 +139,29 @@ int task9(){
   cout<<"Введите номер пальца руки(если у вас гипердактилия, то пропустите)\n";
   int palec;
   cin>>palec;
-  if (palec<=5 && palec>0){
-    switch (palec){
-      case 1: 
-        cout<<"Это большой палец\n";
-        break;
-      case 2:
-        cout<<"Это указательный палец\n";
-        break;
-      case 3: 
-        cout<<"Это средний палец\n";
-        break;
-      case 4: 
-        cout<<"Это безымянный палец\n";
-        break;
-      case 5: 
-        cout<<"Это мизинец\n";
-        break;
-      default:
-        cout<<"либо у вас 6 пальцев руки, либо их нет\n";
-    }
 
-    }
+  
+  switch (palec){
+    case 1: 
+      cout<<"Это большой палец\n";
+      break;
+    case 2:
+      cout<<"Это указательный палец\n";
+      break;
+    case 3: 
+      cout<<"Это средний палец\n";
+      break;
+    case 4: 
+      cout<<"Это безымянный палец\n";
+      break;
+    case 5: 
+      cout<<"Это мизинец\n";
+      break;
+    default:
+      cout<<"либо у вас 6 пальцев руки, либо их нет\n";
+  }
+
+    
     return 0;
 }
 
@@ -222,7 +211,7 @@ int task10(){
 int task11(){
   cout<<"Task11\n";
 
-
+  return 0;
 }
 
 
@@ -230,6 +219,10 @@ int task11(){
 
 
 int main() {
+
+  // n_zad
+  // switch(n_zad)
+
     task1();
     task2();
     task3();
