@@ -4,7 +4,6 @@ using namespace std;
 
 
 int task1(){
-  // cout << "Tasks\n";
   cout<<"Task 1:\n";
 
   cout << "Your number is (up to five digits):\n";
