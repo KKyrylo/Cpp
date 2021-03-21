@@ -1,0 +1,237 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+
+
+void task2(){
+  cout << "Zadanie 2\n";
+
+  string a, b, c;
+  
+  cout << "Proszę wpisać 1 słowo:\n";
+  cin >> a;
+  // cout << "1 słowo -" << a <<endl;
+
+  cout << "Proszę wpisać 2 słowo:\n";
+  cin >> b;
+  // cout << "2 słowo -" << b << endl;
+
+  cout << "Proszę wpisać 3 słowo:\n";
+  cin >> c;
+  // cout << "3 słowo -" << c << endl;
+
+  /*
+  if (a > b && b > c) 
+  {
+      cout << a << b << c;
+
+  }
+  else if(b > a && a > c) {
+      cout << b << a << c;
+  } 
+  else if (c > a && a > b) {
+      cout << c << a << b;
+  }
+  */
+
+  if( a<b && a<c ){
+    cout << a << " ";
+    cout << ((b<c) ? b : c) << " "; 
+    cout << ((b<c) ? c : b) << " "; 
+  }
+  else if( b<c && b<a ){
+    cout << b << " ";
+    cout << ((a<c) ? a : c) << " "; 
+    cout << ((a<c) ? c : a) << " "; 
+  }
+  else{
+    cout << c << " ";
+    cout << ((a<b) ? a : b) << " "; 
+    cout << ((a<b) ? b : a) << " "; 
+  }
+
+
+
+  // 2 sposob
+  // string a, b, c;
+  if( a>b && a>c ){
+    b>c ? cout << a << b << c : cout << a << c << b;
+  }
+  else if( b>c && b>a ){
+    a>c ? cout << b << a << c : cout << b << c << a;
+  }
+  else{
+    if(a>b)
+      cout << c << a << b;
+    else
+      cout << c << b << a;
+  }
+
+
+
+  // 3 sposob
+  int res = 0;
+  if(a>b) res += 1;
+  if(a>c) res += 2;
+  if(b>c) res += 4;
+
+  switch(res){
+    case 0: // a<=b && a<=c && b<=c
+      cout << b << c << a;
+      break;
+    case 1: // a>b && a<=c && b<=c
+      cout << c << a << b;
+      break;
+    case 2: // a<=b && a>c && b<=c
+      // invalid
+      break;
+    case 3: // a>b && a>c && b<=c
+      cout << a << c << b;
+      break;
+    case 4: // a<=b && a<=c && b>c
+      cout << b << c << a;
+      break;
+    case 5: // a>b && a<=c && b>c
+      // invalid
+      break;
+    case 6: // a<=b && a>c && b>c
+      cout << b << a << c;
+      break;
+    case 7: // a>b && a>c && b>c
+      cout << a << b << c;
+      break;
+  }
+
+}
+
+
+
+
+void task3()
+{
+  cout << "Zadanie 3\n";
+  cout << "Wprowadź licby (wprowadź liczbę < 0 żeby skończyć):\n";
+
+  // vector<int> nums = {};
+      
+  // int liczba = 0;
+  // while(1) {
+  //   cin >> liczba;
+  //   if (liczba < 0) {
+  //       break;
+  //   }
+  //   nums.push_back(liczba);
+  // }
+
+  
+  // vector<string> words = {};
+  // string str;
+  // while(1) {
+  //     cin >> str;
+  //     if (str == "exit") {
+  //         break;
+  //     }
+  //     words.push_back(str);
+  // }
+
+  bool next = false;
+  vector<int> nums = {};
+  vector<string> words = {};
+  string str;
+  int liczba = 0;
+
+
+  for(;;){
+    if(!next ){
+      cin >> liczba;
+      if (liczba < 0) {
+          next = true;
+          continue;
+      }
+      nums.push_back(liczba);
+    }
+    else{
+      cin >> str;
+      if (str == "exit") {
+          break;
+      }
+      words.push_back(str);
+    }
+
+  }
+
+  next = false;
+
+  for(int i = nums.size();;){
+    if(!next){
+      i--;
+      cout << nums[i]<<' ';
+      if(i==0)
+        next = true;
+    }
+    else{
+      cout << words[i]<<' ';
+      i++;
+      if(i==words.size()){
+        break;
+      }
+    }
+  }
+
+  // for (int i = nums.size()-1; i >= 0; i--)
+  // {
+  //     cout << nums[i]<<' ';
+  // }
+
+
+  // for (int i = 0; i < words.size(); i++)
+  // {
+  //     cout << words[i]<<' ';
+  // }
+
+}
+
+
+
+void task1(){
+    
+  cout << "Zadanie 1\n";
+
+  cout << "123 + 321 =" << 123 + 321 << endl;
+  cout << "123 & 321 =" << (123 & 321) << endl; //mamy na myśli operacje logiczne wykorzystując operatory logiczne, więc musimy użyć nawiasy
+  cout << "123 | 321 =" << (123 | 321) << endl;
+
+  // return 0;
+}
+
+
+
+
+
+
+int main()
+{
+  int n_zad;
+
+  cout << "Numer zadania:";
+  cin >> n_zad;
+
+  switch (n_zad) {
+    case 1:
+      task1();
+      break;
+    case 2:
+      task2();
+      break;
+    case 3:
+      task3();
+      break;
+    default:
+      cout << "Unknown"<<endl;
+      break;
+  }
+
+}
