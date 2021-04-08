@@ -1,0 +1,103 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+using namespace std;
+
+bool contains_needle(string siano,string igla) {
+bool test;
+int p;
+p = siano.find(igla);
+
+cout << p << endl;
+cout << "pozycja \"igła\" w string = " << siano.find("igła") << endl;
+
+if (p!= -1) {
+  test=true;
+  cout << "znaleziono igłę\n";
+
+} else {
+  test=false;
+  cout << "nie znaleziono igły\n";
+
+}
+return test;
+}
+
+bool contains_all(vector<int> v1, vector<int> v2) {
+  
+  bool test2;
+
+  if (v1 == v2) {
+
+    test2=true;
+    cout << "Prawda\n";
+
+  } else {
+
+    test2=false;
+    cout << "Fałsz\n";
+
+  }
+
+  return test2;
+}
+
+auto exchange_boundaries(vector<int> v3) {
+ 
+
+  auto it = minmax_element(begin(v3), end(v3));
+  swap(*it.first, *it.second);
+  copy(begin(v3), end(v3), ostream_iterator <int>(cout, "   "));
+  system("pause");
+
+// for (int i=0; i<v3.size(); i++) cout<<v3[i]<<" ";
+  
+  return v3;
+}
+
+string translate_to_Kwiatkovsky(string zam){
+
+  replace(zam.begin(), zam.end(), 'r', 'l');
+  replace(zam.begin(), zam.end(), 'R', 'L');
+  cout << zam << endl;
+  
+  return zam;
+}
+
+// int copy_by_pushing(vector<int> v4,int n,int p){
+
+//swap(v4[id1], v4[id2]);
+// return v4;
+// }
+
+int main() {
+  cout << "PJC3\n";
+  
+  string siano = "siano siano siano igła siano siano";
+  string igla = "igła";
+  cout << "Zadanie 1: \n"<< contains_needle(siano, igla) <<endl;
+
+  vector<int> v1 (10);
+  vector<int> v2 (10);
+  cout << "\n Zadanie 2:\n" << contains_all(v1, v2 )<<endl ;
+  
+  string zam = "Rainbow Red Roses";
+  cout << "\n Zadanie5:\n" << translate_to_Kwiatkovsky(zam)<<endl;
+
+  vector <int> v3;
+  v3 = { 1, 3, 5, 26, 4, 6, 7, 101, -8 };
+  
+  cout << "\n Zadanie 3 w \" exchange_boundaries \" "<<endl; 
+  
+  // vector<int> v4;
+  // int n;
+  // int p;
+
+  // // cout<<"Zadanie 4:"<<endl;
+  // // auto result = copy_by_pushing({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, n, p);
+ 
+
+return 0;
+}
