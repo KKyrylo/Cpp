@@ -126,32 +126,29 @@ int task8(){
 
 int task9(){
   cout<<"Task9:\n";
-  cout<<"Введите номер пальца руки(если у вас гипердактилия, то пропустите)\n";
-  int palec;
-  cin>>palec;
 
+  cout<<"Enter the finger number\n";  int palec;  cin>>palec;
+  while (palec == 0 || palec > 5){
+    cout << "The incorrect finger number" << '\n' << "Please input the finger number up to 5\n";  cin >> palec;
+  }
   
   switch (palec){
     case 1: 
-      cout<<"Это большой палец\n";
+      cout<<"That's Thumb\n";
       break;
     case 2:
-      cout<<"Это указательный палец\n";
+      cout<<"That's Index Finger\n";
       break;
     case 3: 
-      cout<<"Это средний палец\n";
+      cout<<"That's Middle Finger\n";
       break;
     case 4: 
-      cout<<"Это безымянный палец\n";
+      cout<<"That's Ring Finger\n";
       break;
     case 5: 
-      cout<<"Это мизинец\n";
+      cout<<"That's Little Finger\n";
       break;
-    default:
-      cout<<"либо у вас 6 пальцев руки, либо их нет\n";
   }
-
-    
     return 0;
 }
 
@@ -210,20 +207,32 @@ int task11(){
 
 int main() {
 
-  // n_zad
-  // switch(n_zad)
+  cout << "Choose the number of task:\n";
+    int n_zad;
+    cin >> n_zad;
 
-    task1();
-    task2();
-    task3();
-    task4();
-    task5();
-    task6();
-    task7();
-    task8();
-    task9();
-    task10();
-
+  switch(n_zad){
+    case 1: task1();
+      break;
+    case 2: task2();
+      break;
+    case 3: task3();
+      break;
+    case 4: task4();
+      break;
+    case 5: task5();
+      break;
+    case 6: task6();
+      break;
+    case 7: task7();
+      break;
+    case 8: task8();
+      break;
+    case 9: task9();
+      break;
+    case 10: task10();
+      break;
+  }
 }
 
 
