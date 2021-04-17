@@ -95,7 +95,7 @@ int task6(){
 int task7(){
   cout<<"Task7:\n";
 
-  int num1, num2;
+  double num1, num2;
 
   cout<<"Enter two numbers:\n"; cin>>num1;  cin>>num2;
     cout<<"a*b="<<num1*num2<<endl;
@@ -114,11 +114,11 @@ int task8(){
   if (x>9999 || x<1000){
   cout << "The number is incorrect, please input the four-digit number\n"; cin >> x;
   }
-  
+
   cout << "Your number is:" << x << '\n'; cout << "Then digits of ur num in reverse:\n";
   while (x>0){
     int last_digit = x%10;
-    cout << last_digit << endl;
+    cout << last_digit;
     x /= 10;
   }  
   return 0;
