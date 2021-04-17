@@ -199,6 +199,7 @@ int main() {
     cin >> n_zad;
 
   switch(n_zad){
+
     case 1: task1();
       break;
     case 2: task2();
@@ -219,8 +220,12 @@ int main() {
       break;
     case 10: task10();
       break;
+    case 11: task11();
+    break;
+    default: cout << "Task is not finished or doesn't exist, wait for update" << '\n';
   }
-}
+  return 0;
+  }
 
 
 
