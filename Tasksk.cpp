@@ -94,31 +94,34 @@ int task6(){
 
 int task7(){
   cout<<"Task7:\n";
-  int num1;
-  int num2;
-  cout<<"Enter two numbers:\n";
-  cin>>num1;
-  cin>>num2;
-  cout<<"a*b="<<num1*num2<<endl;
-  cout<<"a+b="<<num1+num2<<endl;
-  cout<<"a-b="<<num1-num2<<endl;
-  cout<<"average of two numbers="<<(num1 +num2)/2<<endl;
+
+  int num1, num2;
+
+  cout<<"Enter two numbers:\n"; cin>>num1;  cin>>num2;
+    cout<<"a*b="<<num1*num2<<endl;
+    cout<<"a+b="<<num1+num2<<endl;
+    cout<<"a-b="<<num1-num2<<endl;
+    cout<<"An average of two numbers="<<(num1 +num2)/2<<endl;
 
   return 0;
 }
 
 int task8(){
   cout<<"Task8:\n";
-  //  n > 999  and n < 10000
-  srand((unsigned int) time (0)); //activates the generator
-  int num_rand = rand()%10000;
-  while (num_rand<0){
-    int last_digit= num_rand%10;
-    cout<<last_digit<<endl;
-    num_rand/=10;
-  }
 
-    return 0;
+  cout << "Enter a four-digit number\n";  int x; cin >> x;
+
+  if (x>9999 || x<1000){
+  cout << "The number is incorrect, please input the four-digit number\n"; cin >> x;
+  }
+  
+  cout << "Your number is:" << x << '\n'; cout << "Then digits of ur num in reverse:\n";
+  while (x>0){
+    int last_digit = x%10;
+    cout << last_digit << endl;
+    x /= 10;
+  }  
+  return 0;
 }
 
 int task9(){
