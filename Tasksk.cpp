@@ -155,42 +155,22 @@ int task9(){
 
 int task10(){
   cout<<"Task10:\n";
-  // int a[] = 
-  // int a,b,c,d,e;
+  
+  int a[5] = { 0, 1, 0, 1, 1 };
+    cout<<"Sample Input 1:" << ' '; for ( int i =0; i<5; i++) { cout << a[i]; } //printing input
+    cout << '\n';
+  int b[5]; for (int j=0;j<5;j++) { a[j]=0 ? b[j]=0 : b[j]=j+1;  }  //changing input to needed output
+    cout<<"Sample Output 1:" << ' ';  for (int z=0; z<5; z++) { cout << b[z]; } //printing output
+    cout << '\n';
 
-  // int array[5];
-  int a[4];
 
-  a[0]=0;
-  a[1]=1;
-  a[2]=0;
-  a[3]=1;
-  // a[4]=1;
-  cout<<"Sample Input 1:"<<a<<endl;
-  int b[4];
-  for (int i=0;i<5;i++){
-    a[i]=0 ? b[i]=0 : b[i]=i;
-    
-  }
-  cout<<"Sample Output 1:"<<b<<endl;
+  int c[5] = { 1, 1, 1, 1, 0 };
+    cout<<"Sample Input 2:"<<' '; for(int q = 0; q<5; q++) { cout << c[q]; } //input
+    cout << '\n';
 
-  int c[4];
-
-  c[0]=1;
-  c[1]=1;
-  c[2]=1;
-  c[3]=1;
-  // c[4]=0;
-
-  cout<<"Sample Input 2:"<<c<<endl;
-
-  int d[4];
-  for (int i=0;i<5;i++){
-    c[i]=0 ? d[i]=0 : d[i]=i;
-    
-  }
-  cout<<"Sample Output 2:"<<d<<endl;
-
+  int d[5]; for (int x=0;x<5;x++) { c[x]=0 ? d[x]=0 : d[x]=x; } //changing input
+    cout<<"Sample Output 2:"<< ' '; for (int l =0; l<5; l++) { cout << d[l]; }//printing output
+    cout << '\n';
   return 0;
 }
 
