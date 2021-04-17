@@ -2,14 +2,11 @@
 #include <ctime>
 using namespace std;
 
-
 int task1(){
-  // cout << "Tasks\n";
   cout<<"Task 1:\n";
-
   cout << "Your number is (up to five digits):\n";
-  int a=0;
-  cin >> a;
+  
+    int a; cin >> a;
   
   if (a<=99999) {
     cout << "1 digit is " << (a/10000)<<endl;
@@ -17,7 +14,7 @@ int task1(){
     cout << "3 digit is " << (a/100)%10<<endl;
     cout << "4 digit is " << (a/10)%10<<endl;
     cout << "5 digit is " << a%10<<endl;
-  } else {
+   } else {
     cout << "Your number is incorrect\n";
   }
   return 0;
@@ -27,57 +24,53 @@ int task2(){
   cout << "Task 2:\n";
   int a,b,f;
 
-  cout << "Enter numbers a, b, f \n";
-  cin >> a >> b >>f;
+  cout << "Enter numbers a, b, f \n"; cin >> a >> b >>f;
   cout<<"Your numbers are:\n";
-  cout << "a="<<a<<endl;
-  cout << "b="<<b<<endl;
-  cout << "f="<<f<<endl;
+    cout << "a="<<a<<endl;
+    cout << "b="<<b<<endl;
+    cout << "f="<<f<<endl;
+  
   cout<< "Calculating by formula: (а + b — f / а) + f * a * a — (a + b)\n";
-  cout<<"x="<< ((a + b - f / a) + f * a * a - (a + b)) <<endl;
+    cout<<"x="<< ((a + b - f / a) + f * a * a - (a + b)) <<endl;
   
   return 0;
 }
 
 int task3(){
   cout << "Task 3:\n";
+  
   char z;
-  cout <<"Enter latin lowercase letter:\n";
-  cin>>z;
+  
+  cout <<"Enter latin lowercase letter:\n"; cin>>z;
+  
   if (z>='a' && z<='z'){
     cout<<"Your lowercase letter is: "<<z<<endl;
-    cout<<"Your letter in uppercase then is: ";
-    cout<< (char)( z  - ( 'z'-'Z') ) <<endl;
-  }
-  else{
+    cout<<"Your letter in uppercase then is: "; cout<< (char)( z  - ( 'z'-'Z') ) <<endl;
+  
+  } else {
     cout<<"--- ";
   }
-
   return 0;
 }
 
 int task4(){
   cout<<"Task 4:\n";
-  cout<<"Enter meters:"<<endl;
-  int metr;
-  cin>> metr;
+  
+  cout<<"Enter meters:"<<endl;  double metr;  cin>> metr;
   cout<<metr<<" meters in kilometers will be "<<metr/1000<<" kilometers"<<endl;
   return 0;
-
 }
 
 int task5(){
   cout<<"Task 5:\n";
-  //char plusik='+';
-  // cout<<plusik<<endl;
-  // cout<<plusik<<plusik<<endl;
-  cout<<"+\n";
-  // cout<<"++\n";
-  // cout<<"+++\n";
-  // cout<<"++++\n";
-  // cout<<"+++++\n";
-  // cout<<"++++++\n";
-  // cout<<"+++++++\n";
+  
+  int n;  cout <<"Number of lines="; cin >>n;   
+    
+  for (int i = 1; i <=n; i++) {    
+    for (int j = 1; j < i+1; j++)
+      cout << "*"; 
+      cout << "\n";
+  }
   return 0;
 }
 
@@ -85,23 +78,17 @@ int task6(){
   int numA;
   int numB;
   int numC;
-  cout<<"Enter your first num:\n";
-  cin>>numA;
-  cout<<"Enter your second num:\n";
-  cin>>numB;
-  cout<<"Enter your third num:\n";
-  cin>>numC;
+    cout<<"Enter your first num:\n";  cin>>numA;
+    cout<<"Enter your second num:\n"; cin>>numB;
+    cout<<"Enter your third num:\n";  cin>>numC;
 
-  if ( numA==numB || numA==numC || numB==numC )
-  {
-    cout<<"1 number*5 ="<<numA*5<<endl;
-    cout<<"2 number*5 ="<<numB*5<<endl;
-    cout<<"3 number*5 ="<<numC*5<<endl;
-  }else{
+  if ( numA==numB || numA==numC || numB==numC ) {
+    cout<<"1 number+5 ="<<numA+5<<endl;
+    cout<<"2 number+5 ="<<numB+5<<endl;
+    cout<<"3 number+5 ="<<numC+5<<endl;
+   } else {
     cout<<"At least two numbers must match, the input is incorrect"<<endl;
   }
-    
-  
   return 0;
 }
 
