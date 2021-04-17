@@ -153,7 +153,7 @@ int task9(){
 }
 
 
-int task10(){
+int task10(){ //INCORRECT
   cout<<"Task10:\n";
   
   int a[5] = { 0, 1, 0, 1, 1 };
