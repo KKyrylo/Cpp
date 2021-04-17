@@ -153,13 +153,16 @@ int task9(){
 }
 
 
-int task10(){ //INCORRECT
+int task10(){
   cout<<"Task10:\n";
   
   int a[5] = { 0, 1, 0, 1, 1 };
     cout<<"Sample Input 1:" << ' '; for ( int i =0; i<5; i++) { cout << a[i]; } //printing input
     cout << '\n';
-  int b[5]; for (int j=0;j<5;j++) { a[j]=0 ? b[j]=0 : b[j]=j+1;  }  //changing input to needed output
+  int b[5]; for (int j=0;j<5;j++) {   //changing input to needed output
+    //a[j]=0 ? b[j]=0 : b[j]=j+1; doesn't work
+    if (a[j] == 0) {  b[j] = 0; } else {  b[j] = j+1; }
+    }  
     cout<<"Sample Output 1:" << ' ';  for (int z=0; z<5; z++) { cout << b[z]; } //printing output
     cout << '\n';
 
@@ -168,7 +171,11 @@ int task10(){ //INCORRECT
     cout<<"Sample Input 2:"<<' '; for(int q = 0; q<5; q++) { cout << c[q]; } //input
     cout << '\n';
 
-  int d[5]; for (int x=0;x<5;x++) { c[x]=0 ? d[x]=0 : d[x]=x; } //changing input
+    int d[5]; for (int x=0;x<5;x++) { //changing input
+    //c[x]=0 ? d[x]=0 : d[x]=x; doesn't work
+    if (c[x] == 0) {  d[x] = 0; } else {  d[x] = x+1; }
+    } 
+
     cout<<"Sample Output 2:"<< ' '; for (int l =0; l<5; l++) { cout << d[l]; }//printing output
     cout << '\n';
   return 0;
