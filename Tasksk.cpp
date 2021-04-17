@@ -153,14 +153,34 @@ int task9(){
 }
 
 
-int task10(){
+int task10(){ //Doesn't work
   cout<<"Task10:\n";
   
-  int a[5] = { 0, 1, 0, 1, 1 };
-    cout<<"Sample Input 1:" << ' '; for ( int i =0; i<5; i++) { cout << a[i]; } //printing input
+  cout << "Input up to five digits. Press \"Enter\" to stop \n"; 
+  vector <double> a;
+ // for (int i=0; i<6; i++) {
+   int x=0;
+   if (x< 100000){
+    cin >>x;
+    a.push_back(x);
+    }
+   
+   cout<<"Your Input:\n";
+   for (int i=0; i<6 ;i++) {
+     cout <<a[i];
+   }
+  //   for (int i = 0; i < 5; i++){
+  //       double cyfr;
+  //       cin >> cyfr;
+  //       a[i].push_back(cyfr);
+  //   }
+
+
+  //int a[5] = { 0, 1, 0, 1, 1 };
+    cout<<"Sample Input 1:" << ' '; for ( int i =0; i<sizeof(a); i++) { cout << a[i] << " "; } //printing input
     cout << '\n';
   int b[5]; for (int j=0;j<5;j++) {   //changing input to needed output
-    //a[j]=0 ? b[j]=0 : b[j]=j+1; doesn't work
+    //a[j]=0 ? b[j]=0 : b[j]=j+1;
     if (a[j] == 0) {  b[j] = 0; } else {  b[j] = j+1; }
     }  
     cout<<"Sample Output 1:" << ' ';  for (int z=0; z<5; z++) { cout << b[z]; } //printing output
@@ -172,7 +192,7 @@ int task10(){
     cout << '\n';
 
     int d[5]; for (int x=0;x<5;x++) { //changing input
-    //c[x]=0 ? d[x]=0 : d[x]=x; doesn't work
+    //c[x]=0 ? d[x]=0 : d[x]=x; 
     if (c[x] == 0) {  d[x] = 0; } else {  d[x] = x+1; }
     } 
 
